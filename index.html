@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beranda Utama » Fakultas Hukum – Universitas Jambi</title>
+<meta name="google-site-verification" content="SrTZawFSaLAONuV52vjH13dAEw3zOeO0J7W9G7wwpi8" />
+<link rel="icon" type="image/png" href="https://law.unja.ac.id/wp-content/uploads/2024/11/cropped-WhatsApp_Image_2024-07-31_at_16.06.10-removebg-preview-32x32.png">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#003580;--blue2:#002060;--gold:#c8a951;--glight:#e8c35a;--white:#fff;--text:#333;--border:#e0e0e0;--nav:#003580}
+body{font-family:'Open Sans',sans-serif;color:var(--text);font-size:13px;line-height:1.6;background:#f5f5f5}
+a{text-decoration:none;color:inherit}img{max-width:100%;height:auto;display:block}ul{list-style:none}
+
+/* TOPBAR */
+#topbar{background:var(--blue2);padding:5px 0;font-size:12px}
+#topbar .w{max-width:1200px;margin:0 auto;padding:0 15px;display:flex;justify-content:space-between;align-items:center}
+.tbl{display:flex;gap:18px;color:rgba(255,255,255,.72)}
+.tbl a{color:rgba(255,255,255,.72);transition:.2s}.tbl a:hover{color:var(--gold)}
+.tbl a i,.tbl span i{margin-right:4px;font-size:11px}
+.tbr{display:flex;gap:6px;align-items:center}
+.tbr a{width:24px;height:24px;border:1px solid rgba(255,255,255,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.72);font-size:12px;transition:.2s}
+.tbr a:hover{background:var(--gold);border-color:var(--gold);color:var(--blue2)}
+.tblang{display:flex;gap:5px;margin-left:8px}
+.tblang a{font-size:11px;font-weight:700;padding:1px 7px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.72);border-radius:2px;transition:.2s}
+.tblang a.on,.tblang a:hover{background:var(--gold);border-color:var(--gold);color:var(--blue2)}
+
+/* HEADER */
+#header{background:#fff;padding:8px 0;border-bottom:3px solid var(--gold);box-shadow:0 1px 6px rgba(0,0,0,.08)}
+#header .w{max-width:1200px;margin:0 auto;padding:0 15px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hlogo img{height:72px;width:auto;object-fit:contain}
+.hsrch{position:relative;width:240px}
+.hsrch input{width:100%;border:1px solid #ddd;border-radius:20px;padding:7px 36px 7px 14px;font-size:13px;outline:none;font-family:inherit;transition:.2s}
+.hsrch input:focus{border-color:#a7360c}
+.hsrch button{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:none;background:none;color:#a7360c;cursor:pointer;font-size:14px}
+.hunja{display:flex;align-items:center;gap:9px;border-left:1px solid #ddd;padding-left:14px}
+.hunja img{height:50px;width:auto}
+.hunja-t{font-size:11px;line-height:1.4}.hunja-t strong{display:block;color:#a7360c;font-size:12px}
+
+/* NAVBAR */
+#nav{background:#a7360c;position:sticky;top:0;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#nav .w{max-width:1200px;margin:0 auto;padding:0 15px;display:flex;align-items:stretch}
+.nul{display:flex;align-items:stretch}
+.nli{position:relative}
+.na{display:flex;align-items:center;gap:5px;color:#fff;font-size:12.5px;font-weight:600;padding:13px 14px;white-space:nowrap;text-transform:uppercase;letter-spacing:.3px;transition:.15s}
+.na i{font-size:9px}
+.nli:hover>.na,.nli.cur>.na{background:var(--gold);color:var(--blue2)}
+.ndrop{position:absolute;top:100%;left:0;min-width:238px;background:#fff;border-top:3px solid var(--gold);box-shadow:0 4px 18px rgba(0,0,0,.15);display:none;z-index:1000}
+.nli:hover .ndrop{display:block}
+.ndrop li a{display:block;padding:9px 16px;color:#333;font-size:12.5px;border-bottom:1px solid #f0f0f0;transition:.15s}
+.ndrop li:last-child a{border-bottom:none}
+.ndrop li a:hover{background:#f0f4ff;color:#a7360c;padding-left:22px}
+.ndrop li a i{color:var(--gold);margin-right:6px;font-size:11px}
+.nburg{display:none;margin-left:auto;padding:13px;color:#fff;cursor:pointer;font-size:18px;border:none;background:none}
+
+/* SLIDER */
+#slider{position:relative;overflow:hidden;height:468px;background:#001a3d}
+.sld{position:absolute;inset:0;opacity:0;transition:opacity .9s;background-size:cover;background-position:center}
+.sld.on{opacity:1}
+.slov{position:absolute;inset:0;background:rgba(0,15,50,.52);display:flex;align-items:center}
+.slw{max-width:1200px;margin:0 auto;padding:0 40px;width:100%}
+.sl-badge{display:inline-block;background:var(--gold);color:var(--blue2);font-size:11px;font-weight:700;padding:4px 14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.sl-h2{font-size:40px;font-weight:700;color:#fff;line-height:1.18;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.sl-p{font-size:15px;color:rgba(255,255,255,.88);margin-bottom:22px;max-width:520px}
+.sl-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--blue2);padding:11px 26px;font-weight:700;font-size:13px;letter-spacing:.4px;text-transform:uppercase;transition:.2s}
+.sl-btn:hover{background:#fff;color:#a7360c}
+.slarrows{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none;padding:0 14px}
+.sarr{pointer-events:all;width:38px;height:38px;background:rgba(0,0,0,.35);border:none;color:#fff;font-size:15px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.2s}
+.sarr:hover{background:var(--gold);color:var(--blue2)}
+.sldots{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.sdot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.42);border:2px solid rgba(255,255,255,.28);cursor:pointer;transition:.2s}
+.sdot.on{background:var(--gold);border-color:var(--gold)}
+
+/* STATS */
+#stats{background:#a7360c}
+#stats .w{max-width:1200px;margin:0 auto;padding:0 15px;display:flex}
+.stat{flex:1;text-align:center;padding:16px 8px;border-right:1px solid rgba(255,255,255,.12);color:#fff}
+.stat:last-child{border-right:none}
+.stn{font-size:28px;font-weight:700;color:var(--gold);line-height:1}
+.stl{font-size:11px;opacity:.82;margin-top:3px}
+
+/* TICKER */
+#ticker{background:var(--gold);padding:7px 0;overflow:hidden}
+#ticker .w{max-width:1200px;margin:0 auto;padding:0 15px;display:flex;align-items:center;gap:10px}
+.tklbl{background:#a7360c;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0;border-radius:2px}
+.tkscroll{overflow:hidden;flex:1}
+.tkinner{display:flex;gap:50px;animation:tick 34s linear infinite;white-space:nowrap}
+.tkinner span{font-size:12px;font-weight:600;color:var(--blue2)}
+.tkinner span::before{content:'●';margin-right:8px;font-size:8px}
+@keyframes tick{0%{transform:translateX(60%)}100%{transform:translateX(-100%)}}
+
+/* UTIL */
+.w{max-width:1200px;margin:0 auto;padding:0 15px}
+section{padding:46px 0}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.sh .ln{height:3px;background:var(--gold);flex:1}
+.sh h2{font-size:18px;font-weight:700;color:#a7360c;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;padding-left:14px;position:relative}
+.sh h2::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:5px;height:20px;background:var(--gold);border-radius:1px}
+
+/* ABOUT */
+#about{background:#fff}
+.abgrid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+.abimg{position:relative;overflow:visible}
+.abimg img{width:100%;height:305px;object-fit:cover;box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.abbadge{position:absolute;bottom:18px;right:-6px;background:var(--gold);color:var(--blue2);font-size:13px;font-weight:700;padding:8px 18px;box-shadow:0 3px 10px rgba(0,0,0,.18)}
+.abtxt h3{font-size:22px;font-weight:700;color:#a7360c;margin-bottom:14px;padding-bottom:10px;border-bottom:3px solid var(--gold);display:inline-block}
+.abtxt p{color:#555;margin-bottom:10px;line-height:1.8;font-size:13.5px}
+.abtxt .btnm{display:inline-flex;align-items:center;gap:7px;border:2px solid #a7360c;color:#a7360c;padding:8px 20px;font-weight:700;font-size:12.5px;margin-top:8px;transition:.2s}
+.abtxt .btnm:hover{background:#a7360c;color:#fff}
+
+/* PRODI */
+#prodi{background:#f5f7fb}
+.prgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prcard{background:#fff;border:1px solid #e8e8e8;padding:22px 14px;text-align:center;transition:.2s;cursor:pointer}
+.prcard:hover{border-color:#a7360c;box-shadow:0 4px 18px rgba(0,53,128,.1);transform:translateY(-3px)}
+.prico{width:58px;height:58px;margin:0 auto 12px;background:#e8f0fe;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#a7360c;transition:.2s}
+.prcard:hover .prico{background:#a7360c;color:#fff}
+.prcard h4{font-size:13.5px;font-weight:700;color:#a7360c;margin-bottom:6px;line-height:1.4}
+.prcard p{font-size:12px;color:#666;line-height:1.6}
+.prakre{display:inline-block;margin-top:10px;background:var(--gold);color:var(--blue2);font-size:11px;font-weight:700;padding:2px 10px}
+
+/* NEWS */
+#news{background:#fff}
+.ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.nc{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07);transition:.2s;overflow:hidden}
+.nc:hover{transform:translateY(-4px);box-shadow:0 8px 26px rgba(0,0,0,.12)}
+.ncimg{height:178px;overflow:hidden;position:relative;background:#ddd}
+.ncimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.nc:hover .ncimg img{transform:scale(1.06)}
+.nccat{position:absolute;top:10px;left:10px;background:var(--gold);color:var(--blue2);font-size:10px;font-weight:700;padding:3px 9px;text-transform:uppercase;letter-spacing:.3px}
+.ncbody{padding:14px}
+.ncmeta{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+.ncdate{font-size:11px;color:#999;display:flex;align-items:center;gap:4px}
+.nctag{font-size:10px;font-weight:600;background:#e8f0fe;color:#a7360c;padding:2px 8px;border-radius:8px}
+.nctitle{font-size:13.5px;font-weight:700;color:#1a1a1a;line-height:1.5;margin-bottom:8px}
+.nctitle a:hover{color:#a7360c}
+.ncexc{font-size:12px;color:#666;line-height:1.65;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ncmore{font-size:12px;font-weight:700;color:#a7360c;display:flex;align-items:center;gap:5px}
+.ncmore:hover{color:var(--gold)}
+.nwall{text-align:center;margin-top:26px}
+.btnall{display:inline-flex;align-items:center;gap:8px;background:#a7360c;color:#fff;padding:10px 26px;font-size:13px;font-weight:700;transition:.2s}
+.btnall:hover{background:var(--gold);color:var(--blue2)}
+
+/* ANN + SIDEBAR */
+#ann{background:#f5f7fb}
+.angrid{display:grid;grid-template-columns:2fr 1fr;gap:26px}
+.anbox{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.anitem{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border-bottom:1px solid #f0f0f0;transition:.15s}
+.anitem:hover{background:#f8f9ff}
+.anitem:last-child{border-bottom:none}
+.andate{min-width:44px;height:44px;background:#a7360c;border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.andate .d{font-size:15px;font-weight:700;line-height:1}
+.andate .m{font-size:9.5px;opacity:.85;text-transform:uppercase}
+.aninfo h5{font-size:12.5px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.45}
+.aninfo h5 a:hover{color:#a7360c}
+.aninfo p{font-size:11px;color:#999}
+.antag{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:8px}
+.antag.ak{background:#d1e7dd;color:#0a5132}
+.antag.pg{background:#fff3cd;color:#664d03}
+.antag.bs{background:#cff4fc;color:#055160}
+.sidebar{display:flex;flex-direction:column;gap:18px}
+.sw{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden}
+.swh{background:#a7360c;color:#fff;padding:11px 14px;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;display:flex;align-items:center;gap:7px}
+.swh i{color:var(--gold)}
+.swb{padding:12px}
+.swlinks li{border-bottom:1px solid #f0f0f0}
+.swlinks li:last-child{border-bottom:none}
+.swlinks li a{display:flex;align-items:center;gap:7px;padding:7px 4px;font-size:12.5px;color:#333;transition:.15s}
+.swlinks li a:hover{color:#a7360c;padding-left:10px}
+.swlinks li a i{color:var(--gold);font-size:10px}
+.galgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.gitem{aspect-ratio:1;overflow:hidden;cursor:pointer;background:#ddd;position:relative}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gitem:hover img{transform:scale(1.1)}
+.gfb{background:linear-gradient(135deg,#003580,#0057a8)!important}
+.gfb2{background:linear-gradient(135deg,#c8a951,#e8c35a)!important}
+.gfb3{background:linear-gradient(135deg,#2d7a4f,#3da868)!important}
+.gfb4{background:linear-gradient(135deg,#6b2d8b,#9c45c7)!important}
+.gfb5{background:linear-gradient(135deg,#c8512d,#e87345)!important}
+.gfb6{background:linear-gradient(135deg,#1a5276,#2980b9)!important}
+.gitem.noimg{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.35);font-size:18px}
+
+/* AGENDA */
+#agenda{background:#fff}
+.aggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.agcard{display:flex;border:1px solid #e8e8e8;overflow:hidden;transition:.2s}
+.agcard:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);border-color:#a7360c}
+.agdate{min-width:58px;background:#a7360c;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;padding:12px 6px}
+.agdate .d{font-size:22px;font-weight:700;line-height:1}
+.agdate .m{font-size:10px;margin-top:1px;opacity:.85;text-transform:uppercase}
+.agdate .y{font-size:10px;opacity:.7}
+.aginfo{padding:12px 13px}
+.aginfo h5{font-size:12.5px;font-weight:700;color:#1a1a1a;margin-bottom:5px;line-height:1.45}
+.aginfo p{font-size:11.5px;color:#888;display:flex;align-items:center;gap:4px}
+.agtime{margin-top:3px!important}
+
+/* VIDEO */
+#video{background:#a7360c;padding:46px 0}
+.vtop{display:flex;align-items:center;gap:0;margin-bottom:26px}
+.vtop h2{font-size:18px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.4px;padding-left:14px;position:relative}
+.vtop h2::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:5px;height:20px;background:var(--gold);border-radius:1px}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.vmain{aspect-ratio:16/9;background:rgba(0,0,0,.35);position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vmain img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7}
+.playbtn{width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.18);border:3px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;position:relative;z-index:1;transition:.2s}
+.playbtn:hover{background:var(--gold);border-color:var(--gold);color:var(--blue2)}
+.vlist{display:flex;flex-direction:column;gap:12px}
+.vi{display:flex;gap:10px;background:rgba(255,255,255,.1);padding:10px;cursor:pointer;transition:.2s}
+.vi:hover{background:rgba(255,255,255,.2)}
+.vithumb{width:78px;height:52px;flex-shrink:0;background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:16px;color:rgba(255,255,255,.5);overflow:hidden}
+.vithumb img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.viinfo h6{font-size:12.5px;font-weight:600;color:#fff;margin-bottom:3px;line-height:1.4}
+.viinfo p{font-size:11px;color:rgba(255,255,255,.6)}
+.vyt{text-align:center;margin-top:22px}
+.btnyt{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--blue2);padding:10px 26px;font-weight:700;font-size:13px;transition:.2s}
+.btnyt:hover{background:#fff;color:#a7360c}
+
+/* FOOTER */
+#footer{background:#152744;color:rgba(255,255,255,.78)}
+.ftop{padding:46px 0 34px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px}
+.ftlogo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.ftlogo img{height:55px;width:auto;object-fit:contain}
+.ftdesc{font-size:12.5px;line-height:1.8;margin-bottom:14px;opacity:.85}
+.ftaddr{font-size:12px;line-height:2}
+.ftaddr i{color:var(--gold);margin-right:6px;width:14px}
+.ftsoc{display:flex;gap:7px;margin-top:14px}
+.ftsoc a{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,.78);transition:.2s}
+.ftsoc a:hover{background:var(--gold);color:var(--blue2)}
+.fw h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:14px;padding-bottom:7px;border-bottom:2px solid var(--gold)}
+.fwlinks li{margin-bottom:6px}
+.fwlinks li a{font-size:12px;color:rgba(255,255,255,.68);display:flex;align-items:center;gap:6px;transition:.2s}
+.fwlinks li a i{color:var(--gold);font-size:10px}
+.fwlinks li a:hover{color:var(--gold);padding-left:4px}
+.ftbox{background:rgba(255,255,255,.07);padding:10px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:8px}
+.ftbox strong{display:block;color:#fff;margin-bottom:2px;font-size:12.5px}
+.ftpart{display:flex;align-items:center;gap:8px;padding:14px 0;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap}
+.ftpart span{font-size:11px;color:rgba(255,255,255,.42);margin-right:4px}
+.ftpl{height:28px;padding:2px 10px;background:rgba(255,255,255,.1);border-radius:2px;display:flex;align-items:center;font-size:11px;font-weight:700;color:rgba(255,255,255,.62)}
+#fbot{background:rgba(0,0,0,.22);border-top:1px solid rgba(255,255,255,.08);padding:12px 0}
+#fbot .w{display:flex;justify-content:space-between;align-items:center}
+#fbot p{font-size:11.5px;color:rgba(255,255,255,.52)}
+.fblinks{display:flex;gap:14px}
+.fblinks a{font-size:11.5px;color:rgba(255,255,255,.52);transition:.2s}
+.fblinks a:hover{color:var(--gold)}
+
+/* FLOAT */
+.floats{position:fixed;bottom:22px;right:22px;display:flex;flex-direction:column;gap:7px;z-index:9998}
+.fbtn{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;border:none;box-shadow:0 3px 12px rgba(0,0,0,.22);transition:.2s;text-decoration:none}
+.fbtn:hover{transform:scale(1.1)}
+.fbtn.wa{background:#25d366;color:#fff}
+.fbtn.top{background:#a7360c;color:#fff;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+.fbtn.top.vis{opacity:1;pointer-events:all}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.prgrid{grid-template-columns:repeat(2,1fr)}.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  #slider{height:260px}.sl-h2{font-size:22px}
+  .abgrid,.ngrid,.aggrid,.vgrid,.angrid{grid-template-columns:1fr}
+  .nul{display:none;flex-direction:column;position:absolute;top:100%;left:0;width:100%;background:#a7360c}
+  .nul.open{display:flex}
+  .ndrop{position:static;box-shadow:none;border:none;border-left:3px solid var(--gold);background:#002575}
+  .ndrop li a{color:rgba(255,255,255,.85)}
+  .nburg{display:flex}
+  #stats .w{flex-wrap:wrap}
+  .stat{flex:0 0 50%;border-bottom:1px solid rgba(255,255,255,.12)}
+  .tbl{display:none}
+  .fgrid,.prgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar">
+  <div class="w">
+    <div class="tbl">
+      <a href="mailto:humasfh@unja.ac.id"><i class="fa fa-envelope"></i> humasfh@unja.ac.id</a>
+      <a href="tel:0741583453"><i class="fa fa-phone"></i> (0741) 583453</a>
+      <span><i class="fa fa-map-marker-alt"></i> Mendalo Darat, Muaro Jambi</span>
+    </div>
+    <div class="tbr">
+      <a href="https://www.facebook.com/fhunja" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/fh.unja" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@fhunja" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <div class="tblang"><a href="#" class="on">ID</a><a href="#">EN</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="w">
+    <div class="hlogo">
+      <img src="https://law.unja.ac.id/wp-content/uploads/2025/11/cropped-cropped-cropped-Blue-Green-Red-and-Pink-Playful-Creative-Studio-Logo-7-1-768x249.png"
+           alt="Fakultas Hukum Universitas Jambi"
+           style="height:72px;width:auto"
+           onerror="this.onerror=null;this.src='';this.alt='FH UNJA';this.style='font-size:18px;font-weight:700;color:#003580'">
+    </div>
+    <div class="hsrch">
+      <input type="search" placeholder="Cari...">
+      <button type="button"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="hunja">
+      <img src="https://www.unja.ac.id/wp-content/uploads/2020/09/logo-unja.png"
+           alt="Universitas Jambi" style="height:50px;width:auto"
+           onerror="this.style.display='none'">
+      <div class="hunja-t"><strong>Universitas Jambi</strong><span>unja.ac.id</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="w">
+    <ul class="nul" id="navUl">
+      <li class="nli cur"><a href="#" class="na"><i class="fa fa-home"></i> Beranda</a></li>
+      <li class="nli">
+        <a href="#" class="na">Profil <i class="fa fa-chevron-down"></i></a>
+        <ul class="ndrop">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Sejarah</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Visi &amp; Misi</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Pimpinan Fakultas</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Struktur Organisasi</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Tenaga Pengajar / Dosen</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Tenaga Kependidikan</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Akreditasi</a></li>
+        </ul>
+      </li>
+      <li class="nli">
+        <a href="#" class="na">Akademik <i class="fa fa-chevron-down"></i></a>
+        <ul class="ndrop">
+          <li><a href="#"><i class="fa fa-angle-right"></i> S1 Ilmu Hukum</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> S1 Ilmu Politik</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> S1 Ilmu Pemerintahan</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Program Magister Hukum</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Program Doktor Ilmu Hukum</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Kalender Akademik</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Kurikulum &amp; MBKM</a></li>
+        </ul>
+      </li>
+      <li class="nli">
+        <a href="#" class="na">Kemahasiswaan <i class="fa fa-chevron-down"></i></a>
+        <ul class="ndrop">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Organisasi Mahasiswa</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Prestasi Mahasiswa</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Beasiswa</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Alumni</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Tracer Study</a></li>
+        </ul>
+      </li>
+      <li class="nli">
+        <a href="#" class="na">Penelitian <i class="fa fa-chevron-down"></i></a>
+        <ul class="ndrop">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Lembaga Penelitian</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Undang: Jurnal Hukum</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Jambe Law Journal</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Publikasi Dosen</a></li>
+        </ul>
+      </li>
+      <li class="nli">
+        <a href="#" class="na">Pengabdian <i class="fa fa-chevron-down"></i></a>
+        <ul class="ndrop">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Program Pengabdian</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Bantuan Hukum</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Kerjasama</a></li>
+        </ul>
+      </li>
+      <li class="nli">
+        <a href="#" class="na">Fasilitas <i class="fa fa-chevron-down"></i></a>
+        <ul class="ndrop">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Sarana &amp; Prasarana</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Perpustakaan</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Laboratorium Hukum</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Peradilan Semu</a></li>
+        </ul>
+      </li>
+      <li class="nli">
+        <a href="#" class="na">Berita <i class="fa fa-chevron-down"></i></a>
+        <ul class="ndrop">
+          <li><a href="#"><i class="fa fa-angle-right"></i> Berita &amp; Kegiatan</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Pengumuman</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Agenda</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Galeri Foto</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Opini</a></li>
+        </ul>
+      </li>
+      <li class="nli"><a href="#" class="na">Kontak</a></li>
+    </ul>
+    <button class="nburg" id="burger" onclick="document.getElementById('navUl').classList.toggle('open')"><i class="fa fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- SLIDER -->
+<div id="slider">
+  <div class="sld on" style="background-image:url('https://law.unja.ac.id/wp-content/uploads/2024/06/Berita_FH-9-1.jpg')">
+    <div class="slov"><div class="slw">
+      <span class="sl-badge">Akreditasi Unggul</span>
+      <h2 class="sl-h2">Menjadi Fakultas Hukum<br>Berkelas Dunia</h2>
+      <p class="sl-p">Berbasis Sumber Daya Alam dan Kewirausahaan – FH UNJA terus mengembangkan diri menuju keunggulan akademik bertaraf internasional.</p>
+      <a href="#" class="sl-btn"><i class="fa fa-graduation-cap"></i> Penerimaan Mahasiswa Baru</a>
+    </div></div>
+  </div>
+  <div class="sld" style="background-image:url('https://law.unja.ac.id/wp-content/uploads/2024/02/DSC04513.jpg')">
+    <div class="slov"><div class="slw">
+      <span class="sl-badge">UNJA Law Fair 6.0</span>
+      <h2 class="sl-h2">Transformasi Hukum<br>Sumber Daya Alam</h2>
+      <p class="sl-p">FH UNJA menggelar UNJA Law Fair dengan peserta dari 45 universitas seluruh Indonesia – meningkatkan wawasan dan daya saing mahasiswa hukum.</p>
+      <a href="#" class="sl-btn"><i class="fa fa-info-circle"></i> Selengkapnya</a>
+    </div></div>
+  </div>
+  <div class="sld" style="background-image:url('https://law.unja.ac.id/wp-content/uploads/2024/03/IMG_2891.jpg')">
+    <div class="slov"><div class="slw">
+      <span class="sl-badge">Guru Besar Baru</span>
+      <h2 class="sl-h2">13 Guru Besar UNJA<br>Resmi Dikukuhkan</h2>
+      <p class="sl-p">Universitas Jambi mengukuhkan 13 Guru Besar baru – FH UNJA menjadi fakultas dengan sumbangan terbanyak dengan 4 Guru Besar.</p>
+      <a href="#" class="sl-btn"><i class="fa fa-newspaper"></i> Baca Beritanya</a>
+    </div></div>
+  </div>
+  <div class="slarrows">
+    <button class="sarr" onclick="changeSlide(-1)"><i class="fa fa-chevron-left"></i></button>
+    <button class="sarr" onclick="changeSlide(1)"><i class="fa fa-chevron-right"></i></button>
+  </div>
+  <div class="sldots">
+    <div class="sdot on" onclick="goSlide(0)"></div>
+    <div class="sdot" onclick="goSlide(1)"></div>
+    <div class="sdot" onclick="goSlide(2)"></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="w">
+    <div class="stat"><div class="stn">30+</div><div class="stl">Dosen Bergelar Doktor</div></div>
+    <div class="stat"><div class="stn">4</div><div class="stl">Guru Besar</div></div>
+    <div class="stat"><div class="stn">5.500+</div><div class="stl">Mahasiswa Aktif</div></div>
+    <div class="stat"><div class="stn">59+</div><div class="stl">Tahun Berpengalaman</div></div>
+    <div class="stat"><div class="stn">Unggul</div><div class="stl">Akreditasi BAN-PT</div></div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div id="ticker">
+  <div class="w">
+    <span class="tklbl">Info Terbaru</span>
+    <div class="tkscroll"><div class="tkinner">
+      <span>Kalender Akademik Tahun 2025–2026 Telah Diterbitkan</span>
+      <span>UNJA Kukuhkan 13 Guru Besar Baru – FH UNJA Sumbangkan 4 Guru Besar</span>
+      <span>Pembekalan Mahasiswa Magang Profesi Hukum MBKM Semester Genap 2025</span>
+      <span>Mahasiswi FH UNJA Tenri Ola Marzaham Raih Winner dalam Kompetisi Internasional</span>
+      <span>UNJA Law Fair 6.0 – 45 Kampus Bahas Transformasi Hukum SDA</span>
+      <span>ISI TRACER STUDY ALUMNI FH UNJA – Bantu Kami Tingkatkan Kualitas Lulusan</span>
+    </div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="w">
+    <div class="abgrid">
+      <div class="abimg">
+        <img src="https://law.unja.ac.id/wp-content/uploads/2022/11/gedung-fh-unja.jpg"
+             alt="Gedung Fakultas Hukum UNJA"
+             onerror="this.src='https://www.unja.ac.id/wp-content/uploads/2021/04/kampus-unja-mendalo.jpg'">
+        <div class="abbadge">Berdiri Sejak 1963</div>
+      </div>
+      <div class="abtxt">
+        <h3>Tentang Fakultas Hukum UNJA</h3>
+        <p>Fakultas Hukum Universitas Jambi berdiri sejak tanggal <strong>01 April 1963</strong> melalui Keputusan Menteri PTIP No. 25 Tahun 1963. Sebagai salah satu fakultas tertua di Universitas Jambi, kami berkomitmen untuk melahirkan lulusan yang profesional, berintegritas, dan berdaya saing global.</p>
+        <p>FH UNJA berperan dalam penyiapan SDM bidang hukum dan pengembangan ilmu hukum serta budaya hukum masyarakat melalui Tri Dharma Perguruan Tinggi – Pengajaran, Penelitian, dan Pengabdian Kepada Masyarakat.</p>
+        <p>Dengan visi menjadi <strong>"World Class Faculty of Law Berbasis SDA dan Kewirausahaan"</strong>, FH UNJA terus meningkatkan kualitas akademik, penelitian inovatif, dan pengabdian yang berdampak nyata bagi masyarakat Jambi dan Indonesia.</p>
+        <a href="#" class="btnm"><i class="fa fa-arrow-right"></i> Selengkapnya</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODI -->
+<section id="prodi">
+  <div class="w">
+    <div class="sh"><div class="ln"></div><h2>Program Studi</h2><div class="ln"></div></div>
+    <div class="prgrid">
+      <div class="prcard">
+        <div class="prico"><i class="fa fa-balance-scale"></i></div>
+        <h4>S1 Ilmu Hukum</h4>
+        <p>Program Sarjana membangun fondasi kuat dalam teori dan praktik hukum nasional dan internasional.</p>
+        <span class="prakre">Akreditasi Unggul</span>
+      </div>
+      <div class="prcard">
+        <div class="prico"><i class="fa fa-landmark"></i></div>
+        <h4>S1 Ilmu Politik</h4>
+        <p>Mempelajari sistem politik, kebijakan publik, dan dinamika politik nasional &amp; internasional.</p>
+        <span class="prakre">Terakreditasi</span>
+      </div>
+      <div class="prcard">
+        <div class="prico"><i class="fa fa-city"></i></div>
+        <h4>S1 Ilmu Pemerintahan</h4>
+        <p>Mempersiapkan pemimpin pemerintahan yang kompeten di era otonomi daerah dan reformasi birokrasi.</p>
+        <span class="prakre">Terakreditasi</span>
+      </div>
+      <div class="prcard">
+        <div class="prico"><i class="fa fa-graduation-cap"></i></div>
+        <h4>Pascasarjana Hukum</h4>
+        <p>Program Magister (S2) dan Doktor (S3) Ilmu Hukum untuk pengembangan keilmuan mendalam.</p>
+        <span class="prakre">S2 &amp; S3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="w">
+    <div class="sh"><div class="ln"></div><h2>Berita &amp; Kegiatan Terbaru</h2><div class="ln"></div></div>
+    <div class="ngrid">
+
+      <div class="nc">
+        <div class="ncimg">
+          <img src="https://www.unja.ac.id/wp-content/uploads/2024/02/guru-besar-unja.jpg" alt="Guru Besar"
+               onerror="this.src='https://law.unja.ac.id/wp-content/uploads/2024/06/Berita_FH-9-1.jpg'">
+          <span class="nccat">Akademik</span>
+        </div>
+        <div class="ncbody">
+          <div class="ncmeta">
+            <span class="ncdate"><i class="fa fa-calendar-alt"></i> 10 Feb 2026</span>
+            <span class="nctag">Prestasi</span>
+          </div>
+          <h3 class="nctitle"><a href="#">UNJA Kukuhkan 13 Guru Besar Baru, FH UNJA Sumbangkan 4 Guru Besar</a></h3>
+          <p class="ncexc">Mendalo – Universitas Jambi kembali mencatatkan capaian akademik penting dengan mengukuhkan 13 Guru Besar yang memperoleh SK Kenaikan Jabatan Akademik. Dari jumlah tersebut, FH UNJA menjadi fakultas terbanyak...</p>
+          <a href="#" class="ncmore">Baca Selengkapnya <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="nc">
+        <div class="ncimg">
+          <img src="https://law.unja.ac.id/wp-content/uploads/2024/06/Berita_FH-9-1.jpg" alt="Outbound FH UNJA"
+               onerror="this.src='https://www.unja.ac.id/wp-content/uploads/2024/06/unja-law-fair.jpg'">
+          <span class="nccat">Kegiatan</span>
+        </div>
+        <div class="ncbody">
+          <div class="ncmeta">
+            <span class="ncdate"><i class="fa fa-calendar-alt"></i> 08 Feb 2026</span>
+            <span class="nctag">Berita</span>
+          </div>
+          <h3 class="nctitle"><a href="#">Pererat Solidaritas, FH UNJA Gelar Outbound bagi Pimpinan dan Tenaga Kependidikan</a></h3>
+          <p class="ncexc">Jambi – Fakultas Hukum Universitas Jambi menyelenggarakan kegiatan outbound untuk pimpinan dan tenaga kependidikan guna meningkatkan soliditas dan kinerja tim di lingkungan FH UNJA...</p>
+          <a href="#" class="ncmore">Baca Selengkapnya <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="nc">
+        <div class="ncimg">
+          <img src="https://law.unja.ac.id/wp-content/uploads/2024/02/DSC04513.jpg" alt="MBKM FH UNJA"
+               onerror="this.src='https://law.unja.ac.id/wp-content/uploads/2024/03/IMG_2891.jpg'">
+          <span class="nccat">MBKM</span>
+        </div>
+        <div class="ncbody">
+          <div class="ncmeta">
+            <span class="ncdate"><i class="fa fa-calendar-alt"></i> 08 Feb 2026</span>
+            <span class="nctag">Kemahasiswaan</span>
+          </div>
+          <h3 class="nctitle"><a href="#">FH UNJA Lepas Mahasiswa Magang Profesi Hukum MBKM Semester Genap 2025</a></h3>
+          <p class="ncexc">Jambi – Fakultas Hukum Universitas Jambi menyelenggarakan Pembekalan dan Pelepasan Mahasiswa Magang Profesi Hukum Merdeka Belajar Kampus Merdeka Semester Genap 2024/2025...</p>
+          <a href="#" class="ncmore">Baca Selengkapnya <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="nwall"><a href="#" class="btnall"><i class="fa fa-th-list"></i> Lihat Semua Berita</a></div>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENTS + SIDEBAR -->
+<section id="ann">
+  <div class="w">
+    <div class="angrid">
+      <div>
+        <div class="sh"><div class="ln"></div><h2>Pengumuman</h2><div class="ln"></div></div>
+        <div class="anbox">
+          <div class="anitem">
+            <div class="andate"><span class="d">20</span><span class="m">Mar</span></div>
+            <div class="aninfo">
+              <h5><a href="#">Pengumuman Resmi: Kalender Akademik Tahun 2025–2026 Telah Diterbitkan!</a></h5>
+              <p><span class="antag ak">Akademik</span>&nbsp; Rektorat UNJA</p>
+            </div>
+          </div>
+          <div class="anitem">
+            <div class="andate"><span class="d">17</span><span class="m">Mar</span></div>
+            <div class="aninfo">
+              <h5><a href="#">JADWAL PENGAMBILAN PERLENGKAPAN WISUDA SERTA GLADI RESIK</a></h5>
+              <p><span class="antag pg">Wisuda</span>&nbsp; Sub Bag Akademik</p>
+            </div>
+          </div>
+          <div class="anitem">
+            <div class="andate"><span class="d">14</span><span class="m">Mar</span></div>
+            <div class="aninfo">
+              <h5><a href="#">Jadwal Ujian Tengah Semester Genap 2024/2025 Fakultas Hukum UNJA</a></h5>
+              <p><span class="antag ak">Akademik</span>&nbsp; Bagian Pendidikan</p>
+            </div>
+          </div>
+          <div class="anitem">
+            <div class="andate"><span class="d">10</span><span class="m">Mar</span></div>
+            <div class="aninfo">
+              <h5><a href="#">ISI TRACER STUDY ALUMNI FH UNJA – Bantu Kami Tingkatkan Kualitas Lulusan</a></h5>
+              <p><span class="antag pg">Alumni</span>&nbsp; Kemahasiswaan</p>
+            </div>
+          </div>
+          <div class="anitem">
+            <div class="andate"><span class="d">06</span><span class="m">Mar</span></div>
+            <div class="aninfo">
+              <h5><a href="#">Pendaftaran Beasiswa PPA &amp; BBP-PPA Semester Genap 2024/2025</a></h5>
+              <p><span class="antag bs">Beasiswa</span>&nbsp; Kemahasiswaan</p>
+            </div>
+          </div>
+          <div class="anitem">
+            <div class="andate"><span class="d">03</span><span class="m">Mar</span></div>
+            <div class="aninfo">
+              <h5><a href="#">Pendaftaran Ujian Komprehensif Periode Maret–April 2025</a></h5>
+              <p><span class="antag ak">Akademik</span>&nbsp; Jurusan Ilmu Hukum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sw">
+          <div class="swh"><i class="fa fa-link"></i> Link Terkait</div>
+          <div class="swb">
+            <ul class="swlinks">
+              <li><a href="https://siakad.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> SIAKAD Universitas Jambi</a></li>
+              <li><a href="https://ujh.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Undang: Jurnal Hukum</a></li>
+              <li><a href="https://jlj.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Jambe Law Journal</a></li>
+              <li><a href="https://repository.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Repository UNJA</a></li>
+              <li><a href="https://pmb.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Penerimaan Mahasiswa Baru</a></li>
+              <li><a href="https://lppm.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> LPPM UNJA</a></li>
+              <li><a href="https://www.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Universitas Jambi</a></li>
+              <li><a href="#"><i class="fa fa-angle-right"></i> E-Learning FH UNJA</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sw">
+          <div class="swh"><i class="fa fa-images"></i> Galeri Foto</div>
+          <div class="swb">
+            <div class="galgrid">
+              <div class="gitem" id="g1"><img src="https://law.unja.ac.id/wp-content/uploads/2024/06/Berita_FH-9-1.jpg" alt="" onerror="fallGal(this,'gfb')"></div>
+              <div class="gitem" id="g2"><img src="https://law.unja.ac.id/wp-content/uploads/2024/02/DSC04513.jpg" alt="" onerror="fallGal(this,'gfb2')"></div>
+              <div class="gitem" id="g3"><img src="https://law.unja.ac.id/wp-content/uploads/2024/03/IMG_2891.jpg" alt="" onerror="fallGal(this,'gfb3')"></div>
+              <div class="gitem" id="g4"><img src="https://www.unja.ac.id/wp-content/uploads/2024/06/unja-law-fair.jpg" alt="" onerror="fallGal(this,'gfb4')"></div>
+              <div class="gitem" id="g5"><img src="https://www.unja.ac.id/wp-content/uploads/2024/02/guru-besar-unja.jpg" alt="" onerror="fallGal(this,'gfb5')"></div>
+              <div class="gitem" id="g6"><img src="https://www.unja.ac.id/wp-content/uploads/2021/04/kampus-unja-mendalo.jpg" alt="" onerror="fallGal(this,'gfb6')"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="w">
+    <div class="sh"><div class="ln"></div><h2>Agenda Kegiatan</h2><div class="ln"></div></div>
+    <div class="aggrid">
+      <div class="agcard">
+        <div class="agdate"><span class="d">25</span><span class="m">Mar</span><span class="y">2025</span></div>
+        <div class="aginfo">
+          <h5>Seminar Nasional Hukum Tata Negara &amp; Otonomi Daerah</h5>
+          <p><i class="fa fa-map-marker-alt"></i> Aula FH UNJA</p>
+          <p class="agtime"><i class="fa fa-clock"></i> 08.00 – 17.00 WIB</p>
+        </div>
+      </div>
+      <div class="agcard">
+        <div class="agdate"><span class="d">28</span><span class="m">Mar</span><span class="y">2025</span></div>
+        <div class="aginfo">
+          <h5>Kuliah Umum: Perkembangan Hukum Bisnis di Era Digital</h5>
+          <p><i class="fa fa-map-marker-alt"></i> Auditorium UNJA</p>
+          <p class="agtime"><i class="fa fa-clock"></i> 09.00 – 12.00 WIB</p>
+        </div>
+      </div>
+      <div class="agcard">
+        <div class="agdate"><span class="d">03</span><span class="m">Apr</span><span class="y">2025</span></div>
+        <div class="aginfo">
+          <h5>Pelatihan Legal Drafting bagi Mahasiswa Semester VI</h5>
+          <p><i class="fa fa-map-marker-alt"></i> Laboratorium Hukum FH</p>
+          <p class="agtime"><i class="fa fa-clock"></i> 13.00 – 16.00 WIB</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="w">
+    <div class="vtop"><h2>Video Kegiatan</h2></div>
+    <div class="vgrid">
+      <div class="vmain">
+        <img src="https://law.unja.ac.id/wp-content/uploads/2024/06/Berita_FH-9-1.jpg" alt="Video FH UNJA"
+             onerror="this.style.display='none'">
+        <div class="playbtn"><i class="fa fa-play"></i></div>
+      </div>
+      <div class="vlist">
+        <div class="vi">
+          <div class="vithumb"><img src="https://law.unja.ac.id/wp-content/uploads/2024/06/Berita_FH-9-1.jpg" alt="" onerror="this.parentElement.innerHTML='<i class=\'fa fa-play\'></i>'"></div>
+          <div class="viinfo"><h6>Outbound Pimpinan &amp; Tenaga Kependidikan FH UNJA 2025</h6><p><i class="fa fa-clock"></i> 5 hari yang lalu</p></div>
+        </div>
+        <div class="vi">
+          <div class="vithumb"><img src="https://www.unja.ac.id/wp-content/uploads/2024/06/unja-law-fair.jpg" alt="" onerror="this.parentElement.innerHTML='<i class=\'fa fa-play\'></i>'"></div>
+          <div class="viinfo"><h6>UNJA Law Fair 6.0 – Transformasi Hukum SDA</h6><p><i class="fa fa-clock"></i> 2 minggu yang lalu</p></div>
+        </div>
+        <div class="vi">
+          <div class="vithumb"><img src="https://law.unja.ac.id/wp-content/uploads/2024/02/DSC04513.jpg" alt="" onerror="this.parentElement.innerHTML='<i class=\'fa fa-play\'></i>'"></div>
+          <div class="viinfo"><h6>Seminar Nasional Hukum Lingkungan &amp; SDA</h6><p><i class="fa fa-clock"></i> 1 bulan yang lalu</p></div>
+        </div>
+        <div class="vi">
+          <div class="vithumb"><img src="https://www.unja.ac.id/wp-content/uploads/2024/02/guru-besar-unja.jpg" alt="" onerror="this.parentElement.innerHTML='<i class=\'fa fa-play\'></i>'"></div>
+          <div class="viinfo"><h6>Pengukuhan 13 Guru Besar UNJA</h6><p><i class="fa fa-clock"></i> 1 bulan yang lalu</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="vyt"><a href="https://www.youtube.com/@fhunja" target="_blank" class="btnyt"><i class="fab fa-youtube"></i> Kunjungi Kanal YouTube Kami</a></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="ftop">
+    <div class="w">
+      <div class="fgrid">
+        <div>
+          <div class="ftlogo">
+            <img src="https://law.unja.ac.id/wp-content/uploads/2025/11/cropped-cropped-cropped-Blue-Green-Red-and-Pink-Playful-Creative-Studio-Logo-7-1-768x249.png"
+                 alt="FH UNJA" onerror="this.style.display='none'">
+          </div>
+          <p class="ftdesc">Fakultas Hukum Universitas Jambi adalah garda terdepan pendidikan hukum di Provinsi Jambi, berkomitmen melahirkan sarjana hukum yang profesional, berintegritas, dan berdaya saing global.</p>
+          <div class="ftaddr">
+            <p><i class="fa fa-map-marker-alt"></i> Jl. Jambi – Muara Bulian No. KM. 15, Mendalo Darat, Kec. Jambi Luar Kota, Muaro Jambi 36657</p>
+            <p><i class="fa fa-phone"></i> (0741) 583453</p>
+            <p><i class="fa fa-envelope"></i> humasfh@unja.ac.id</p>
+            <p><i class="fa fa-globe"></i> law.unja.ac.id</p>
+          </div>
+          <div class="ftsoc">
+            <a href="https://www.facebook.com/fhunja" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/fh.unja" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@fhunja" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="fw">
+          <h4>Tautan Cepat</h4>
+          <ul class="fwlinks">
+            <li><a href="#"><i class="fa fa-angle-right"></i> Beranda</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Profil Fakultas</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Program Studi</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Dosen &amp; Staff</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Penelitian</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Kemahasiswaan</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Alumni</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Kontak Kami</a></li>
+          </ul>
+        </div>
+        <div class="fw">
+          <h4>Layanan Online</h4>
+          <ul class="fwlinks">
+            <li><a href="https://siakad.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> SIAKAD UNJA</a></li>
+            <li><a href="https://ujh.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Undang: Jurnal Hukum</a></li>
+            <li><a href="https://jlj.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Jambe Law Journal</a></li>
+            <li><a href="https://repository.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> Repository UNJA</a></li>
+            <li><a href="https://pmb.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> PMB Online</a></li>
+            <li><a href="https://lppm.unja.ac.id" target="_blank"><i class="fa fa-angle-right"></i> LPPM UNJA</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> E-Learning FH</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Bantuan Hukum</a></li>
+          </ul>
+        </div>
+        <div class="fw">
+          <h4>Kontak &amp; Pimpinan</h4>
+          <div class="ftbox"><strong>Dekan FH UNJA</strong>Dr. Usman, S.H., M.H.</div>
+          <div class="ftbox"><strong>WD I – Akademik</strong>Dr. Muskibah, S.H., M.Hum.</div>
+          <div class="ftbox"><strong>WD II – Keuangan</strong>Dr. Umar, S.H., M.H.</div>
+          <div class="ftbox"><strong>WD III – Kemahasiswaan</strong>Dr. A. Zarkasi, S.H., M.Hum.</div>
+          <a href="https://wa.me/62741583453" target="_blank" style="display:flex;align-items:center;gap:7px;background:#25d366;color:#fff;padding:8px 14px;font-size:12px;font-weight:700;margin-top:10px;width:fit-content"><i class="fab fa-whatsapp"></i> Hubungi via WhatsApp</a>
+        </div>
+      </div>
+      <div class="ftpart">
+        <span>Terafiliasi:</span>
+        <div class="ftpl">BAN-PT</div>
+        <div class="ftpl">APTISI</div>
+        <div class="ftpl">KEMDIKBUD</div>
+        <div class="ftpl">LLDIKTI</div>
+        <div class="ftpl">AHN</div>
+        <div class="ftpl">APHTN-HAN</div>
+      </div>
+    </div>
+  </div>
+  <div id="fbot">
+    <div class="w">
+      <p>© 2025 Fakultas Hukum Universitas Jambi. All Rights Reserved.</p>
+      <div class="fblinks">
+        <a href="#">Kebijakan Privasi</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Peta Situs</a>
+        <a href="#">Hubungi Kami</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<div class="floats">
+  <a href="https://wa.me/62741583453" target="_blank" class="fbtn wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button class="fbtn top" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa fa-arrow-up"></i></button>
+</div>
+
+<script>
+// SLIDER
+let cur=0;
+const slides=document.querySelectorAll('.sld'),dots=document.querySelectorAll('.sdot');
+function goSlide(n){slides[cur].classList.remove('on');dots[cur].classList.remove('on');cur=(n+slides.length)%slides.length;slides[cur].classList.add('on');dots[cur].classList.add('on')}
+function changeSlide(d){goSlide(cur+d)}
+setInterval(()=>changeSlide(1),5500);
+
+// SCROLL TOP
+const tb=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>tb.classList.toggle('vis',window.scrollY>400));
+
+// GALLERY FALLBACK
+function fallGal(img,cls){
+  const p=img.parentElement;
+  p.classList.add(cls,'noimg');
+  img.style.display='none';
+  p.innerHTML='<i class="fa fa-camera"></i>';
+}
+</script>
+</body>
+</html>
